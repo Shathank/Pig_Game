@@ -25,8 +25,10 @@ body {
 /* LAYOUT */
 main {
   position: relative;
-  width: 100rem;
-  height: 60rem;
+  width: 100%;
+  max-width: 100rem;
+  height: 100%;
+  max-height: 60rem;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(200px);
   filter: blur();
@@ -34,11 +36,12 @@ main {
   border-radius: 9px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
 }
 
 .player {
-  flex: 50%;
-  padding: 9rem;
+  flex: 1;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,6 +169,57 @@ main {
   color: #c7365f;
 }
 
-.hidden{
-  display: n;
+.hidden {
+  display: none;
+}
+
+/* Media Queries for Mobile */
+@media only screen and (max-width: 768px) {
+  main {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .player {
+    padding: 3rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 6rem;
+  }
+
+  .current {
+    width: 80%;
+    padding: 1rem;
+  }
+
+  .current-score {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 0.5rem 2rem;
+  }
+
+  .btn--roll, .btn--hold {
+    top: auto;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .btn--hold {
+    bottom: 5rem;
+  }
+
+  .dice {
+    top: 12rem;
+    height: 8rem;
+  }
 }
